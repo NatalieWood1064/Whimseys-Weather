@@ -1,0 +1,68 @@
+.body {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/009/797/original/background.jpg?1622256613");
+  border-radius: 450px;
+  font-family: "Tillana", cursive;
+  font-weight: bolder;
+  margin: 30px;
+  max-width: 1175px;
+  text-align: center;
+}
+.date {
+  font-weight: 900;
+}
+.leftsun,
+.rightsun {
+  border-radius: 140px;
+  max-height: 185px;
+}
+.built,
+.hourly {
+  margin: 18px;
+}
+.built,
+.forcast,
+.degreesC,
+.degreesF {
+  position: relative;
+}
+.built {
+  color: darkslategray;
+  font-size: 14px;
+  left: 60px;
+  padding-top: 10px;
+}
+.current {
+  padding: 20px;
+}
+.degreesC,
+.degreesF {
+  color: #212529;
+  font-size: 14px;
+  text-decoration: none;
+  bottom: 10px;
+}
+.degreesC:hover,
+.degreesF:hover {
+  font-size: large;
+}
+.feelslike {
+  font-size: 18px;
+}
+.forcast {
+  padding: 25px 0 45px 140px;
+  left: 25px;
+}
+.haha {
+  font-size: x-small;
+  font-style: italic;
+  opacity: 10%;
+}
+.header {
+  padding: 40px 0 5px;
+}
+.hourly {
+  padding: 25px 50px;
+}
+.search {
+  padding: 8px;
+}
