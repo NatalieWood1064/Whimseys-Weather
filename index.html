@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tillana:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Whimsy's Weather App take 2</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container border border-dark body">
+      <div class="header">
+        <h1><strong>Whimsy's Weather World</strong></h1>
+      </div>
+      <div class="date">
+        <h3>
+          <strong id="todays-date">Tue, June 8, 2021. 4:05 P.M.</strong>
+        </h3>
+      </div>
+
+      <form class="search" id="search-form">
+        <button
+          class="btn btn-outline-info btn-sm"
+          type="submit"
+          id="current-location"
+        >
+          <strong>Current📍</strong>
+        </button>
+        <input
+          type="search"
+          class="search-bar"
+          placeholder="Enter City"
+          autofocus="on"
+          autocomplete="off"
+          id="inquire"
+        />
+        <button class="btn btn-info btn-sm" type="submit">
+          <strong>🔍</strong>
+        </button>
+      </form>
+
+      <div class="container current">
+        <div class="row">
+          <div class="col-4">
+            <img
+              class="leftsun"
+              src="images/leftsun.jpg"
+              alt="sun hugging cloud"
+            />
+          </div>
+
+          <div class="col-4">
+            <h3>
+              <strong id="location"> </strong> <br />
+							<strong id="description"> </strong> <br />
+							<strong id="temp"> </strong>
+              <span><a href="#" class="degreesC" id="celcius">°C </a> </span>
+              <span
+                ><a href="#" class="degreesF" id="fahrenheit"> °F </a>
+							</span> </br>
+              <strong class="feelslike">Feels like:  <span id="feels-like"> 70 </span></strong>
+            </h3>
+          </div>
+
+          <div class="col-4">
+            <img
+              class="rightsun"
+              src="images/righthugs.jpg"
+              alt="sun hugging cloud"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="container hourly">
+        <div class="row">
+          <div class="col-2">
+            <div class="border bg-light">5PM <br />78°F</div>
+          </div>
+
+          <div class="col-2">
+            <div class="border bg-light">
+              6PM <br />
+              75°F
+            </div>
+          </div>
+
+          <div class="col-2">
+            <div class="border bg-light">7PM <br />71°F</div>
+          </div>
+
+          <div class="col-2">
+            <div class="border bg-light">8PM <br />70°F</div>
+          </div>
+
+          <div class="col-2">
+            <div class="border bg-light">
+              9PM<br />
+              68°F
+            </div>
+          </div>
+
+          <div class="col-2">
+            <div class="border bg-light">
+              10PM <br />
+              67°F
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container forcast">
+        <div class="row">
+          <div class="col-2 p-2">
+            <div class="border bg-light rounded-pill">
+              Tuesday <br />
+              69°F | 43°F <br />
+              ⛅
+            </div>
+          </div>
+
+          <div class="col-2 p-2">
+            <div class="border bg-light rounded-pill">
+              Wednesday <br />
+              59°F | 50°F <br />
+              ⛅
+            </div>
+          </div>
+
+          <div class="col-2 p-2">
+            <div class="border bg-light rounded-pill">
+              Thursday <br />
+              65°F | 53°F<br />
+              🌈
+            </div>
+          </div>
+
+          <div class="col-2 p-2">
+            <div class="border bg-light rounded-pill">
+              Friday<br />
+              68°F | 47°F<br />
+              🌩️
+            </div>
+          </div>
+
+          <div class="col-2 p-2">
+            <div class="border bg-light rounded-pill">
+              Saturday<br />
+              71°F | 55°F<br />
+              ⛅
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="built">
+        <footer>
+          🐱‍💻Built by: Natalie Wood
+          <span class="haha">What de hail</span>
+        </footer>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
