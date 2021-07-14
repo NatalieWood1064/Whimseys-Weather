@@ -27,7 +27,7 @@
 }
 .built {
   color: darkslategray;
-  font-size: 14px;
+  font-size: 12px;
   left: 60px;
   padding-top: 10px;
 }
@@ -51,6 +51,10 @@
 .forcast {
   padding: 25px 0 45px 140px;
   left: 25px;
+}
+.github{
+  color: #212529;
+  text-decoration: none;
 }
 .haha {
   font-size: x-small;
