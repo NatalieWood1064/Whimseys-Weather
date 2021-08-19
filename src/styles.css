@@ -1,134 +1,72 @@
-a {
-  text-decoration: none;
-}
-
-ul{
-  list-style: none;
-  margin: 0;
-}
-li{
-  text-transform: capitalize;
-}
-
-.app {
-    max-height: fit-content;
-    max-width: 1175px;
-    margin: 58px auto;
-}
-
-.bg-light {
-opacity: .75;
-}
-
 .body {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/009/797/original/background.jpg?1622256613");
-  border-radius: 90px;
+  border-radius: 450px;
   font-family: "Tillana", cursive;
-  font-weight: 500;
-  padding: 10px;
+  font-weight: bolder;
+  margin: 30px;
+  max-width: 1175px;
   text-align: center;
-  text-shadow: 1px 1px white;
 }
-
-.built {
-  color: darkslategray;
-  font-size: 12px;
-  margin-top: 10px;
-  padding-top: 10px;
-}
- .currentStatus{
-   position: relative; 
-   left: -50px;
- }
 .date {
-  margin: 10px;
+  font-weight: 900;
 }
-
-.description-box{
-  position:relative;
-  left: 15px;
-}
-.display-info{
-  margin: 32px 0px 25px 15px;
-}
-
-.feelslike,
-.highof,
-.humidity,
-.lowof,
-.precipitation,
- .wind{
-font-size: 16px;
-font-weight: 600
- }
-
-.forcast {
-  margin: 5px 90px;
-  padding: 10px 55px;
-}
-
-
-.github{
-  color: #212529;
-}
-
-.haha {
-  font-size: x-small;
-  font-style: italic;
-  opacity: 10%;
-}
-
-
-.header {
- margin: 10px;
- padding-top: 10px;
-}
-
-.hour-box{
-border-radius: 30px;
-}
-
-.hourly {
-  margin: 40px 0 0 24px;
-  padding: 25px 75px 25px 20px;
-}
-.location{
-  font-size: 28px;
-  line-height: 40px;
-}
-
 .leftsun,
 .rightsun {
   border-radius: 140px;
   max-height: 185px;
 }
-
-
-.search {
-  padding: 8px;
+.built,
+.hourly {
+  margin: 18px;
 }
-
-.ul-one{
-  padding-left: 16px
-}
-
-.units{
-  color: #212529;
-  bottom: 10px;
-  font-size: 14px;
+.built,
+.forcast,
+.degreesC,
+.degreesF {
   position: relative;
-  text-decoration: none;
 }
-
-.units:hover {
+.built {
+  color: darkslategray;
+  font-size: 12px;
+  left: 60px;
+  padding-top: 10px;
+}
+.current {
+  padding: 20px;
+}
+.degreesC,
+.degreesF {
+  color: #212529;
+  font-size: 14px;
+  text-decoration: none;
+  bottom: 10px;
+}
+.degreesC:hover,
+.degreesF:hover {
   font-size: large;
 }
-
-.weather-temp .units .active{
-cursor: default;
-color: #212529;
+.feelslike {
+  font-size: 18px;
 }
-
-.weather-temp .units .active:hover{
-text-decoration: none;
+.forcast {
+  padding: 25px 0 45px 140px;
+  left: 25px;
+}
+.github{
+  color: #212529;
+  text-decoration: none;
+}
+.haha {
+  font-size: x-small;
+  font-style: italic;
+  opacity: 10%;
+}
+.header {
+  padding: 40px 0 5px;
+}
+.hourly {
+  padding: 25px 50px;
+}
+.search {
+  padding: 8px;
 }
