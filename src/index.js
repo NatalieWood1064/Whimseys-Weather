@@ -81,11 +81,9 @@
  let mainIcon = document.querySelector("#main-icon");
  mainIcon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
  mainIcon.setAttribute("alt", response.data.weather[0].description);
- if(response.data.rain === undefined){
-   document.querySelector("#precipitation").innerHTML= 0 ;}
-   else{
-     document.querySelector("#precipitation").innerHTML = response.data.rain["1h"];
-   }
+ if(response.data.rain !== undefined){ 
+  document.querySelector("#precipitation").innerHTML= `Precipitation ${response.data.rain["1h"]} `;
+  }
    fahrenheitTemp = response.data.main.temp;
    document.querySelector("#location").innerHTML = response.data.name;
    document.querySelector("#description").innerHTML = response.data.weather[0].description;
