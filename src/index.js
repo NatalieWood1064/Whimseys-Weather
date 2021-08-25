@@ -28,7 +28,36 @@
  
  
  
- 
+ function displayForecast(){
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  let forecastHTML = `<div class="row">`;
+  
+  days.forEach(function (day) {
+  forecastHTML = forecastHTML + `
+    <div class="col-2 p-2">
+    <div class="border bg-light rounded-pill">
+      <div class="forecast-day">
+        ${day}</div>
+        <img 
+        src="http://openweathermap.org/img/wn/50d@2x.png" 
+        alt=""
+        width="38"
+        /> 
+        <div>
+        <span class="forecast-max">HI</span>
+        <span class="forecast-min">LO</span>
+        </div>
+        </div>
+  </div>`;
+  });
+  
+   
+  
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML; 
+  console.log(forecastHTML);
+  }
  
  
  
