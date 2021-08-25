@@ -181,3 +181,4 @@
  fahrenheitLink.addEventListener("click", displayFahrenheit);
  
  searchCity("New York");
+ displayForecast();
