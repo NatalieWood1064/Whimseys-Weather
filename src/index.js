@@ -26,38 +26,55 @@
  
  
  
- 
- 
- function displayForecast(){
-  let forecastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
-  let forecastHTML = `<div class="row">`;
+ function formatForecastDays (timestamp) {
+  let date = new date (timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
   
-  days.forEach(function (day) {
-  forecastHTML = forecastHTML + `
-    <div class="col-2 p-2">
-    <div class="border bg-light rounded-pill">
-      <div class="forecast-day">
-        ${day}</div>
-        <img 
-        src="http://openweathermap.org/img/wn/50d@2x.png" 
-        alt=""
-        width="38"
-        /> 
-        <div>
-        <span class="forecast-max">HI</span>
-        <span class="forecast-min">LO</span>
-        </div>
-        </div>
-  </div>`;
-  });
-  
-   
-  
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML; 
-  console.log(forecastHTML);
+  return days[day];
   }
+  
+  function displayForecast(response){
+    let forecast = response.data.daily;
+  
+    let forecastElement = document.querySelector("#forecast");
+    
+    let forecastHTML = `<div class="row">`;
+    
+    forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML = forecastHTML + `
+      <div class="col-2 p-2">
+      <div class="border bg-light rounded-pill">
+        <div class="forecast-day">
+          ${formatForecastDays(forecastDay.dt)}</div>
+          <img 
+          src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+          alt=""
+          width="38"
+          /> 
+          <div>
+          <span class="forecast-max">${Math.round(forecastDay.temp.max)}°</span>
+          <span class="forecast-min">${Math.round(forecastDay.temp.min)}°</span>
+          </div>
+          </div>
+    </div>`;
+  }
+    });
+  
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML; 
+    console.log(forecastHTML);
+    }
+  
+  
+    function getForecast(coordinates) {
+      console.log(coordinates);
+  
+      let apiKey = "ae392b466a0914493e8f74cba2d5458a";
+      let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+      axios.get(apiUrl).then(displayForecast);
+    }
  
  
  
@@ -81,6 +98,7 @@
    document.querySelector("#low-of").innerHTML=Math.round(response.data.main.temp_min);
    document.querySelector("#todays-date").innerHTML=formatDate(response.data.dt * 1000);
   
+   getForecast(response.data.coord);
    }
  
  
@@ -122,6 +140,8 @@
    document.querySelector("#low-of").innerHTML=Math.round(response.data.main.temp_min);
    document.querySelector("#todays-date").innerHTML=formatDate(response.data.dt * 1000);
    cument.querySelector("#precipitation").innerHTML = response.data.rain["1h"];
+
+   getForecast(response.data.coord);
      }
  
  
@@ -181,4 +201,3 @@
  fahrenheitLink.addEventListener("click", displayFahrenheit);
  
  searchCity("New York");
- displayForecast();
