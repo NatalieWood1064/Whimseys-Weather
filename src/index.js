@@ -27,7 +27,7 @@
  
  
  function formatForecastDays (timestamp) {
-  let date = new date (timestamp * 1000);
+  let date = new Date (timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
   
@@ -96,7 +96,6 @@
    document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
    document.querySelector("#high-of").innerHTML=Math.round(response.data.main.temp_max);
    document.querySelector("#low-of").innerHTML=Math.round(response.data.main.temp_min);
-   document.querySelector("#todays-date").innerHTML=formatDate(response.data.dt * 1000);
   
    getForecast(response.data.coord);
    }
@@ -138,8 +137,6 @@
    document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
    document.querySelector("#high-of").innerHTML=Math.round(response.data.main.temp_max);
    document.querySelector("#low-of").innerHTML=Math.round(response.data.main.temp_min);
-   document.querySelector("#todays-date").innerHTML=formatDate(response.data.dt * 1000);
-   cument.querySelector("#precipitation").innerHTML = response.data.rain["1h"];
 
    getForecast(response.data.coord);
      }
