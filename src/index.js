@@ -32,9 +32,6 @@ function searchCityTime(timestamp){
   
   return  `${day}, ${month} ${date}, ${year} ${hours}:${minutes} ${ampm}`;
  
- }odaysDate.innerHTML = `${day}, ${month} ${date}, ${year}. ${hours}:${minutes}`;
- 
- 
  
  function formatForecastDays (timestamp) {
   let date = new Date (timestamp * 1000);
