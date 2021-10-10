@@ -21,14 +21,14 @@
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
-    <div id="root">
-      <div class="app">
+    <div class="windowframe">        
         <div class="container border border-dark body">
+          
           <div class="header">
             <h1><strong>Whimsy's Weather World</strong></h1>
           </div>
           <div class="date">
-            <h3 id="todays-date"> </h3>
+            <h3 id="todays-date"></h3>
           </div>
 
           <form class="search" id="search-form">
@@ -88,6 +88,7 @@
 
                     <div class="d-flex justify-content-center currentStatus">
                       <div class="p-1">
+                      
                         <ul>
                          
                     <li class="feelslike">
@@ -96,7 +97,7 @@
                     <li class="humidity">
                       Humidity: <span id="humidity"> </span>%
                     </li>
-                    <li class="wind">Wind: <span id="wind"> </span> km/h</li>
+                    <li class="wind">Wind: <span id="wind"> </span> </li>
                  
                 </ul>
               </div>
@@ -110,7 +111,7 @@
               Low: <span id="low-of"> </span>°
             </li>
             <li class="precipitation">
-              <span id="precipitation"></span>
+              <span id="precipitation"></span> <span class="text-lowercase"> </span>
             </li>
           
         </ul>
@@ -119,12 +120,12 @@
   </div>
              
 
-          <div class="container hourly" id="hourly"> </div>
-         
-
-          <div class="container forcast" id="forecast">
-            
+          <div class="container hourly" id="hourly"> 
           </div>
+
+          <div class="container forecast" id="forecast">
+          </div>
+
           <div class="built">
             <footer>
               <div class="haha">What de hail</div>
@@ -137,6 +138,7 @@
             </footer>
           </div>
         </div>
+        
       </div>
     </div>
     <script src="src/index.js"></script>
