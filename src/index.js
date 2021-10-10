@@ -244,6 +244,43 @@ else {
    }
  } 
 
+ function displayMetric(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let celsiusTemp = ((fahrenheitTemp - 32) * 5)/9;
+
+  let displayedCity = document.querySelector("#location");
+  let city = displayedCity.innerHTML;
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+ 
+  let units = "metric";
+  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
+  let apiKey = "ae392b466a0914493e8f74cba2d5458a";
+  let apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(transformUnits);
+}
+
+function displayImperial(event) {
+event.preventDefault();
+fahrenheitLink.classList.add("active");
+celsiusLink.classList.remove("active");
+
+let displayedCity = document.querySelector("#location");
+let city = displayedCity.innerHTML;
+let tempElement = document.querySelector("#temp");
+tempElement.innerHTML = Math.round(fahrenheitTemp);
+
+let units = "imperial";
+let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
+let apiKey = "ae392b466a0914493e8f74cba2d5458a";
+let apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=${units}`;
+
+axios.get(apiUrl).then(transformUnits);
+}
+
  function displayCelsius(event) {
    event.preventDefault();
    let tempElement = document.querySelector("#temp");
