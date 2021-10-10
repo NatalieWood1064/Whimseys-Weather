@@ -25,6 +25,7 @@ opacity: .75;
 
 .body {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/009/797/original/background.jpg?1622256613");
+  background-size: cover;
   border-radius: 90px;
   font-family: "Tillana", cursive;
   font-weight: 500;
@@ -65,7 +66,7 @@ font-size: 16px;
 font-weight: 600
  }
 
-.forcast {
+.forecast {
   margin: 5px;
   padding: 10px 55px;
 }
@@ -91,21 +92,13 @@ font-weight: 600
 border-radius: 30px;
 }
 
-.hourly {
-  margin: 40px 0 0 24px;
-  padding: 25px 75px 25px 20px;
+.hourly{
+  padding: 0px 25px;
 }
 .location{
   font-size: 28px;
   line-height: 40px;
 }
-
-.leftsun,
-.rightsun {
-  border-radius: 140px;
-  max-height: 185px;
-}
-
 
 .search {
   padding: 8px;
