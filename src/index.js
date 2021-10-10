@@ -210,6 +210,11 @@ function searchCityTime(timestamp){
   axios.get(apiUrl).then(displayForecast);
 }
 
+function obtainImperialForecast(response){
+  let apiKey = "ae392b466a0914493e8f74cba2d5458a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.lat}&lon=${response.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
  
  
  function displayCelsius(event) {
