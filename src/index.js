@@ -281,23 +281,6 @@ let apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=${units}`;
 axios.get(apiUrl).then(transformUnits);
 }
 
- function displayCelsius(event) {
-   event.preventDefault();
-   let tempElement = document.querySelector("#temp");
-   celsiusLink.classList.add("active");
-   fahrenheitLink.classList.remove("active");
-   let celsiusTemp = ((fahrenheitTemp - 32) * 5)/9;
-   tempElement.innerHTML = Math.round(celsiusTemp);
- }
- 
- function displayFahrenheit(event) {
- event.preventDefault();
- celsiusLink.classList.remove("active");
- fahrenheitLink.classList.add("active");
- let tempElement = document.querySelector("#temp");
- tempElement.innerHTML = Math.round(fahrenheitTemp);
- }
- 
  
  
  
