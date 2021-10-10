@@ -1,28 +1,38 @@
-
- let now = new Date();
- let date = now.getDate();
- let hours = now.getHours();
- let minutes = now.getMinutes();
- let year = now.getFullYear();
- let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
- let day = days[now.getDay()];
- let months = [
-   "Jan",
-   "Feb",
-   "Mar",
-   "Apr",
-   "May",
-   "June",
-   "July",
-   "Aug",
-   "Sep",
-   "Oct",
-   "Nov",
-   "Dec"
- ];
- let month = months[now.getMonth()];
- let todaysDate = document.querySelector("#todays-date");
- todaysDate.innerHTML = `${day}, ${month} ${date}, ${year}. ${hours}:${minutes}`;
+function searchCityTime(timestamp){
+  let now = new Date(timestamp * 1000);
+  let date = now.getDate();
+  let hours = now.getHours();
+  
+  let year = now.getFullYear();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  let day = days[now.getDay()];
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ];
+  let month = months[now.getMonth()];
+  let ampm = hours >= 12 ? 'p.m.' : 'a.m.';
+     hours = hours % 12;
+     hours = hours ? hours : 12;
+  let minutes = now.getMinutes();
+     if (minutes < 10) {
+       minutes = `0${minutes}`;
+     }
+   
+  
+  return  `${day}, ${month} ${date}, ${year} ${hours}:${minutes} ${ampm}`;
+ 
+ }odaysDate.innerHTML = `${day}, ${month} ${date}, ${year}. ${hours}:${minutes}`;
  
  
  
@@ -88,6 +98,7 @@
     document.querySelector("#precipitation").innerHTML= `Precipitation ${response.data.rain["1h"]} `;
     }
    fahrenheitTemp = response.data.main.temp;
+   document.querySelector("#todays-date").innerHTML = searchCityTime(response.data.dt);
    document.querySelector("#location").innerHTML = response.data.name;
    document.querySelector("#description").innerHTML = response.data.weather[0].description;
    document.querySelector("#temp").innerHTML = Math.round(fahrenheitTemp);
