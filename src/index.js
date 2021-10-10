@@ -204,7 +204,12 @@ function searchCityTime(timestamp){
    navigator.geolocation.getCurrentPosition(showLocation);
  }
  
- 
+ function obtainMetricForecast(response){  
+  let apiKey = "ae392b466a0914493e8f74cba2d5458a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.lat}&lon=${response.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
  
  
  function displayCelsius(event) {
