@@ -293,9 +293,9 @@ axios.get(apiUrl).then(transformUnits);
  currentButton.addEventListener("click", getCurrentLocation);
  
  let celsiusLink = document.querySelector("#celsius");
- celsiusLink.addEventListener("click", displayCelsius);
+ celsiusLink.addEventListener("click", displayMetric);
  
  let fahrenheitLink = document.querySelector("#fahrenheit");
- fahrenheitLink.addEventListener("click", displayFahrenheit);
+ fahrenheitLink.addEventListener("click", displayImperial);
  
  searchCity("New York");
