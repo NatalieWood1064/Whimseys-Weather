@@ -216,7 +216,34 @@ function obtainImperialForecast(response){
   axios.get(apiUrl).then(displayForecast);
 }
  
- 
+function transformUnits(response){
+  console.log(response);
+  let todaysDate = document.querySelector("#todays-date");
+  let currentTemp = document.querySelector("#temp").innerHTML = Math.round(response.data.main.temp);
+  let feelsLike = document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
+  let wind = document.querySelector("#wind")
+  let high = document.querySelector("#high-of").innerHTML= Math.round(response.data.main.temp_max);
+  let low = document.querySelector("#low-of").innerHTML= Math.round(response.data.main.temp_min);
+
+if (celsiusLink.classList.contains("active")){
+   todaysDate.innerHTML = `${formatEuropeanDateTime(response.data.dt)}`;
+}
+else {
+  todaysDate.innerHTML = `${formatAmericanDateTime(response.data.dt)}`;
+}
+
+  if (celsiusLink.classList.contains("active")) {
+    wind.innerHTML = `${Math.round((response.data.wind.speed * 18) / 5)} km/h`;
+
+   obtainMetricForecast(response.data.coord);
+
+   } else {
+    wind.innerHTML = `${Math.round(response.data.wind.speed)} mph`;
+
+    obtainImperialForecast(response.data.coord);
+   }
+ } 
+
  function displayCelsius(event) {
    event.preventDefault();
    let tempElement = document.querySelector("#temp");
