@@ -47,7 +47,7 @@ opacity: .75;
  }
 
  .currentStatus2{
-  top: -11px;
+  top: -13px;
 }
 
 .date {
@@ -98,9 +98,6 @@ font-weight: 600
 border-radius: 30px;
 }
 
-.hourly{
-  padding: 0px 25px;
-}
 .location{
   font-size: 28px;
   line-height: 40px;
