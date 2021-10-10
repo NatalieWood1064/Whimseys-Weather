@@ -193,6 +193,9 @@ function searchCityTime(timestamp){
    let apiUrl = `${apiEndpoint}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
    console.log(apiUrl);
    axios.get(apiUrl).then(displayCurrentTemp);
+
+   fahrenheitLink.classList.add("active"); 
+   celsiusLink.classList.remove("active");
  }
  
  
