@@ -45,6 +45,33 @@ function searchCityTime(timestamp){
   }
   
   function displayForecast(response){
+
+    console.log(response.data.hourly);
+    
+    let hourly = response.data.hourly;
+
+    let hourlyElement = document.querySelector("#hourly");
+  
+    let hourlyHTML = `<div class="row">`;
+
+    hourly.forEach(function (forecastHour, index) {
+      if(index < 6){
+//        let iconImage = icons()[forecastHour.weather[0].icon];
+        hourlyHTML = hourlyHTML + `
+        <div class="col-2 p-4 my-4 gx-1 per-hour">
+        <div class="border bg-light rounded-pill">
+          <div class="hourly">${formatForecastHours(forecastHour.dt)}
+            <div class="hourlyTemp">${Math.round(forecastHour.temp)}°</div>
+            </div>
+            </div>
+      </div>`;
+      }
+    });
+  
+  hourlyHTML = hourlyHTML + `</div>`;
+  hourlyElement.innerHTML = hourlyHTML; 
+  console.log(hourlyHTML);
+
     let forecast = response.data.daily;
   
     let forecastElement = document.querySelector("#forecast");
@@ -75,7 +102,10 @@ function searchCityTime(timestamp){
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML; 
     console.log(forecastHTML);
+    console.log(response);
+    
     }
+  
   
   
     function getForecast(coordinates) {
