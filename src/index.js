@@ -2,7 +2,6 @@ function searchCityTime(timestamp){
   let now = new Date(timestamp * 1000);
   let date = now.getDate();
   let hours = now.getHours();
-  
   let year = now.getFullYear();
   let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
   let day = days[now.getDay()];
@@ -31,7 +30,7 @@ function searchCityTime(timestamp){
    
   
   return  `${day}, ${month} ${date}, ${year} ${hours}:${minutes} ${ampm}`;
- 
+    }
  
  function formatForecastDays (timestamp) {
   let date = new Date (timestamp * 1000);
