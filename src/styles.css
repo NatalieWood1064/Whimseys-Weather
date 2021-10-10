@@ -40,10 +40,16 @@ opacity: .75;
   margin-top: 10px;
   padding-top: 10px;
 }
- .currentStatus{
+ .currentStatus,
+ .currentStatus2{
    position: relative; 
    left: -50px;
  }
+
+ .currentStatus2{
+  top: -11px;
+}
+
 .date {
   margin: 10px;
 }
