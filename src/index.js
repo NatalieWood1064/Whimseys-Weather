@@ -129,7 +129,7 @@ function searchCityTime(timestamp){
          <div class="forecast-day">
            ${formatForecastDays(forecastDay.dt)}</div>
            <img 
-           src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+           src= "images/${forecastDay.weather[0].icon}.png";
            alt=""
            width="38"
            /> 
@@ -158,8 +158,10 @@ function searchCityTime(timestamp){
   function showCity(response) {
     console.log(response);
     let mainIcon = document.querySelector("#main-icon");
-    mainIcon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    let iconId = response.data.weather[0].icon;
+    mainIcon.setAttribute("src", `images/${iconId}.png`);
     mainIcon.setAttribute("alt", response.data.weather[0].description);
+    mainIcon.setAttribute("width", "92px");
     if(response.data.rain !== undefined){ 
      document.querySelector("#precipitation").innerHTML= `Precipitation ${response.data.rain["1h"]} `;
      }
@@ -198,8 +200,10 @@ function searchCityTime(timestamp){
   function displayCurrentTemp(response) {
     console.log(response.data);
   let mainIcon = document.querySelector("#main-icon");
-  mainIcon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  let iconId = response.data.weather[0].icon;
+  mainIcon.setAttribute("src", `images/${iconId}.png`);
   mainIcon.setAttribute("alt", response.data.weather[0].description);
+  mainIcon.setAttribute("width", "92px");
   if(response.data.rain !== undefined){ 
    document.querySelector("#precipitation").innerHTML= `Precipitation ${response.data.rain["1h"]} `;
    }
