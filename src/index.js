@@ -95,13 +95,13 @@ function searchCityTime(timestamp){
      console.log(response.data.hourly);  
      let hourly = response.data.hourly;
      let hourlyElement = document.querySelector("#hourly");
-     let hourlyHTML = `<div class="row">`;
+     let hourlyHTML = `<div class="row per-hour">`;
  
      hourly.forEach(function (forecastHour, index) {
        if(index < 6){
  //        let iconImage = icons()[forecastHour.weather[0].icon];
          hourlyHTML = hourlyHTML + `
-         <div class="col-2 p-4 my-4 gx-1 per-hour">
+         <div class="col-2 p-4 my-4 gx-1">
          <div class="border bg-light rounded-pill">
            <div class="hourly">${formatForecastHours(forecastHour.dt)}
              <div class="hourlyTemp">${Math.round(forecastHour.temp)}°</div>

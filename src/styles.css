@@ -103,6 +103,9 @@ border-radius: 30px;
   line-height: 40px;
 }
 
+.per-hour{
+  margin-top: 15px;
+}
 .search {
   padding: 8px;
 }
