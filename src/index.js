@@ -68,6 +68,7 @@ function searchCityTime(timestamp){
  function formatForecastHours (sec){
    let date = new Date(sec * 1000);
    let hour = date.getHours();
+   if (fahrenheitLink.classList.contains("active")) {
    let hourString = "";
    if(hour > 12){
      hour = hour - 12;
@@ -80,6 +81,20 @@ function searchCityTime(timestamp){
      hourString = hour + ' a.m.';
    }
    return hourString;
+  }
+
+   if (celsiusLink.classList.contains("active")) {
+    let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+   
  }
  
   function formatForecastDays (timestamp) {
