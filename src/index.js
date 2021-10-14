@@ -107,7 +107,6 @@ function searchCityTime(timestamp){
    
 
    function displayForecast(response){
-     console.log(response.data.hourly);  
      let hourly = response.data.hourly;
      let hourlyElement = document.querySelector("#hourly");
      let hourlyHTML = `<div class="row per-hour">`;
@@ -127,8 +126,7 @@ function searchCityTime(timestamp){
      });
    
    hourlyHTML = hourlyHTML + `</div>`;
-   hourlyElement.innerHTML = hourlyHTML; 
-   console.log(hourlyHTML);
+   hourlyElement.innerHTML = hourlyHTML;
  
      let forecast = response.data.daily;
    
@@ -158,20 +156,16 @@ function searchCityTime(timestamp){
      });
    
      forecastHTML = forecastHTML + `</div>`;
-     forecastElement.innerHTML = forecastHTML; 
-     console.log(forecastHTML);
-     console.log(response);
+     forecastElement.innerHTML = forecastHTML;
      }
  
     function getForecast(coordinates) {
-       console.log(coordinates);
        let apiKey = "ae392b466a0914493e8f74cba2d5458a";
        let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
        axios.get(apiUrl).then(displayForecast);
      }
   
   function showCity(response) {
-    console.log(response);
     let mainIcon = document.querySelector("#main-icon");
     let iconId = response.data.weather[0].icon;
     mainIcon.setAttribute("src", `images/${iconId}.png`);
@@ -204,7 +198,6 @@ function searchCityTime(timestamp){
   
   function inquiry(event) { 
     event.preventDefault();
-    console.log(event);
     let inquireInput = document.querySelector("#inquire");
     let apiKey = "ae392b466a0914493e8f74cba2d5458a";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${inquireInput.value}&appid=${apiKey}&units=imperial`;
@@ -213,7 +206,6 @@ function searchCityTime(timestamp){
   
   
   function displayCurrentTemp(response) {
-    console.log(response.data);
   let mainIcon = document.querySelector("#main-icon");
   let iconId = response.data.weather[0].icon;
   mainIcon.setAttribute("src", `images/${iconId}.png`);
@@ -237,14 +229,12 @@ function searchCityTime(timestamp){
   
   
   function showLocation(position) {
-    console.log(position);
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
     let units = "imperial";
     let apiKey = "ae392b466a0914493e8f74cba2d5458a";
     let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
     let apiUrl = `${apiEndpoint}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-    console.log(apiUrl);
     axios.get(apiUrl).then(displayCurrentTemp);
  
    fahrenheitLink.classList.add("active"); 
@@ -271,7 +261,6 @@ function searchCityTime(timestamp){
  }
  
   function transformUnits(response){
-   console.log(response);
    let todaysDate = document.querySelector("#todays-date");
    let currentTemp = document.querySelector("#temp").innerHTML = Math.round(response.data.main.temp);
    let feelsLike = document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
